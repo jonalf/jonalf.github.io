@@ -9,11 +9,12 @@
       body {
         margin: 0;
         padding: 0;
-        height: 100vh;
+        height: 95vh;
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: sans-serif;
       }
       div {
         font-size: 50vw;
@@ -42,7 +43,7 @@
         console.log(num + 1);
         h.innerText = num+1;
       }
-      document.getElementById("number").addEventListener('mousedown', count_up);
+      document.getElementById("number").addEventListener('pointerdown', count_up);
     </script>
   </body>
 </html>
