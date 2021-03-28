@@ -26,6 +26,13 @@
         display: flex;
         justify-content: center;
 
+        /*make it unselectable?*/
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
       }
     </style>
   </head>
@@ -43,7 +50,9 @@
         console.log(num + 1);
         h.innerText = num+1;
       }
-      document.getElementById("number").addEventListener('pointerdown', count_up);
+      //document.getElementById("number").addEventListener('pointerdown', count_up);
+      document.getElementById("number").addEventListener('touchstart', count_up);
+      document.getElementById("number").addEventListener('touchmove', count_up);
     </script>
   </body>
 </html>
