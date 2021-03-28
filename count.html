@@ -6,16 +6,16 @@
       body {
         margin: 0;
         padding: 0;
-        height: 100vh;
-        width: 100vw;
+        height: 90vh;
+        width: 90vw;
         display: flex;
         justify-content: center;
         align-items: center;
       }
       div {
         font-size: 50vw;
-        width: 100vw;
-        height: 100vh;
+        width: 90vw;
+        height: 90vh;
         padding:0;
         margin: 0;
         background-color: lavender;
@@ -24,19 +24,22 @@
 
       }
     </style>
+  </head>
+
+  <body>
+    <div id="number">
+      1
+    </div>
+
     <script>
       var count_up = function() {
-        var h = document.querySelector("#number");
+        //var h = document.querySelector("#number");
+        var h = document.getElementById("number");
         var num = parseInt(h.innerText);
         console.log(num + 1);
         h.innerText = num+1;
       }
+      document.getElementById("number").addEventListener('mousedown', count_up);
     </script>
-  </head>
-
-  <body>
-    <div id="number" onclick="count_up()">
-      1
-    </div>
   </body>
 </html>
