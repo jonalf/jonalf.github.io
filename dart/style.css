@@ -68,4 +68,5 @@ nav ul li a {
     padding: 20px;
     border: 1px solid #888;
     width: fit-content;
+    z-index: 1;
 }
