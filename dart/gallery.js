@@ -14,12 +14,12 @@ var open_modal = function(event) {
   spotlight.appendChild(i);
   modal.style.display = "flex";
 };
-
-window.onclick = function(event) {
-  var modal = document.getElementById("myModal");
-  if (event.target == modal)
-    modal.style.display = "none";
-};
+//
+// window.onclick = function(event) {
+//   var modal = document.getElementById("myModal");
+//   if (event.target == modal)
+//     modal.style.display = "none";
+// };
 
 
 var setup = function(mode) {
@@ -45,6 +45,13 @@ var setup = function(mode) {
     img.addEventListener('click', open_modal);
     content.appendChild(img);
   }
+
+  window.addEventListener('click', function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal)
+    modal.style.display = "none";
+  }
+  );
   // document.querySelectorAll('img').forEach( item => {
   //   item.addEventListener('click', open_modal)
   // });
