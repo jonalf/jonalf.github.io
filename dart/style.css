@@ -80,8 +80,9 @@ nav ul li a {
 .close {
   color: #aaa;
   float: left;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
+  flex-basis: 100%;
 }
 .close:hover,
 .close:focus {
