@@ -5,16 +5,26 @@ var PAPER_COUNT = 29;
 
 var open_modal = function(event) {
   var modal = document.getElementById("myModal");
-  var spotlight = document.getElementById("spotlight")
+  var spotlight = document.getElementById("spotlight");
   src = event.target.src;
-  var i = document.createElement('img')
+  var i = document.createElement('img');
   i.src = src;
   i.height = 500;
+
+  var span = document.createElement('span');
+  span.classList.add('close');
+  span.innerHTML = '&times';
+  span.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+
   spotlight.innerHTML = '';
+  spotlight.appendChild(span);
   spotlight.appendChild(i);
   modal.style.display = "flex";
 };
-//
+
+
 // window.onclick = function(event) {
 //   var modal = document.getElementById("myModal");
 //   if (event.target == modal)
@@ -36,7 +46,6 @@ var setup = function(mode) {
     src_string = 'img/paper/';
     count = PAPER_COUNT;
   }
-
 
   for (var i=0; i<count; i++) {
     var img = document.createElement('img');
