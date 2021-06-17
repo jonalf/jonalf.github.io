@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Count!</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 95vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      div {
+        font-size: 50vw;
+        width: 100%;
+        height: 100%;
+        padding:0;
+        margin: 0;
+        background-color: lavender;
+        display: flex;
+        justify-content: center;
+
+        /*make it unselectable?*/
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="num">
+      <span id="minus" style="width: 40%">&#8210;</span>
+      <span id="number">0</span>
+      <span id="plus" style="width: 40%">+</span>
+      <span
+    </div>
+
+    <script>
+      var count_up = function() {
+        var h = document.getElementById("number");
+        var num = parseInt(h.innerText);
+        console.log(num + 1);
+        h.innerText = num+1;
+      }
+      var count_down = function() {
+        var h = document.getElementById("number");
+        var num = parseInt(h.innerText);
+        if ( num > 0 ) {
+          console.log(num - 1);
+          h.innerText = num-1;
+        }
+      }
+      document.getElementById("plus").addEventListener('touchstart', count_up);
+      document.getElementById("minus").addEventListener('touchstart', count_down);
+
+    </script>
+  </body>
+</html>
