@@ -1,6 +1,6 @@
 var CANVAS = 0;
 var PAPER = 1;
-var CANVAS_COUNT = 7;
+var CANVAS_COUNT = 33;
 var PAPER_COUNT = 29;
 
 var open_modal = function(event) {
