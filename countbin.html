@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Count!</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 95vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: lavender;
+      }
+      div {
+        font-size: 50vw;
+        width: 100%;
+        height: 90%;
+        padding:0;
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+
+        /*make it unselectable?*/
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+      }
+
+      #binary {
+        margin-top: 10px;
+        font-size: 5vw;
+      }
+
+      .active {
+        border: 1px solid black;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <table id="binary">
+      <tbody>
+        <tr>
+          <td id="1">-</td>
+          <td id="2">-</td>
+          <td id="4">-</td>
+          <td id="8">-</td>
+          <td id="16">-</td>
+          <td id="32">-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="number">
+      0
+    </div>
+
+    <script>
+      var count_up = function() {
+        //var h = document.querySelector("#number");
+        var h = document.getElementById("number");
+        var num = parseInt(h.innerText);
+        console.log(num + 1);
+        h.innerText = num+1;
+        populate_binary(num+1);
+      };
+      //document.getElementById("number").addEventListener('pointerdown', count_up);
+
+      var populate_binary = function(num) {
+        var ids = ["32", "16", "8", "4", "2", "1"];
+        var bin_num = num.toString(2);
+        console.log(bin_num);
+        var offset = ids.length - bin_num.length;
+        if (offset > 0) {
+          bin_num = "0".repeat(offset) + bin_num;
+        }
+        console.log(bin_num);
+        for (var i=0; i<ids.length; i++) {
+          var num_id = document.getElementById(ids[i]);
+          if (bin_num[i] == "1") {
+            num_id.classList.add("active");
+            num_id.innerText = ids[i];
+          }
+          else {
+            num_id.classList.remove("active");
+            num_id.innerText = "-";
+          }
+        }
+      };
+
+      document.getElementById("number").addEventListener('touchstart', count_up);
+      //document.getElementById("number").addEventListener('touchmove', count_up);
+    </script>
+  </body>
+</html>
