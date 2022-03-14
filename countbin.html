@@ -46,6 +46,11 @@
         border: 1px solid black;
         background-color: green;
       }
+
+      td {
+        width: 5vw;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -53,13 +58,8 @@
 
     <table id="binary">
       <tbody>
-        <tr>
-          <td id="1">-</td>
-          <td id="2">-</td>
-          <td id="4">-</td>
-          <td id="8">-</td>
-          <td id="16">-</td>
-          <td id="32">-</td>
+        <tr id="binrow">
+
         </tr>
       </tbody>
     </table>
@@ -79,15 +79,33 @@
       };
       //document.getElementById("number").addEventListener('pointerdown', count_up);
 
-      var populate_binary = function(num) {
-        var ids = ["32", "16", "8", "4", "2", "1"];
-        var bin_num = num.toString(2);
-        console.log(bin_num);
-        var offset = ids.length - bin_num.length;
-        if (offset > 0) {
-          bin_num = "0".repeat(offset) + bin_num;
+      var make_tds = function(bin_num) {
+        var row = document.getElementById("binrow");
+        row.innerHTML = "";
+        var ids = [];
+        for (var i=0; i < bin_num.length; i++) {
+          console.log("adding row: " + i);
+          var x = 2**i;
+          var newd = document.createElement("td");
+          newd.id = x.toString();
+          row.appendChild(newd);
+          x = 2**(bin_num.length-1-i)
+
+          ids.push(x.toString());
         }
-        console.log(bin_num);
+        return ids;
+      };
+
+      var populate_binary = function(num) {
+        var bin_num = num.toString(2);
+        //var ids = ["32", "16", "8", "4", "2", "1"];
+        var ids = make_tds(bin_num);
+        /*
+         *         var offset = ids.length - bin_num.length;
+         *         if (offset > 0) {
+         *           bin_num = "0".repeat(offset) + bin_num;
+         *         }
+         *         console.log(bin_num); */
         for (var i=0; i<ids.length; i++) {
           var num_id = document.getElementById(ids[i]);
           if (bin_num[i] == "1") {
