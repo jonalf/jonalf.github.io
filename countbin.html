@@ -63,19 +63,28 @@
         </tr>
       </tbody>
     </table>
-
-    <div id="number">
-      0
+    <div id="num">
+      <span id="minus" style="width: 40%">&#8210;</span>
+      <span id="number">0</span>
+      <span id="plus" style="width: 40%">+</span>
     </div>
-
     <script>
       var count_up = function() {
         //var h = document.querySelector("#number");
         var h = document.getElementById("number");
         var num = parseInt(h.innerText);
-        console.log(num + 1);
+        //console.log(num + 1);
         h.innerText = num+1;
         populate_binary(num+1);
+      };
+      var count_down = function() {
+        var h = document.getElementById("number");
+        var num = parseInt(h.innerText);
+        if ( num > 0 ) {
+          console.log(num - 1);
+          h.innerText = num-1;
+          populate_binary(num-1);
+        }
       };
       //document.getElementById("number").addEventListener('pointerdown', count_up);
 
@@ -119,7 +128,12 @@
         }
       };
 
-      document.getElementById("number").addEventListener('touchstart', count_up);
+      //document.getElementById("number").addEventListener('touchstart', count_up);
+      //document.getElementById("number").addEventListener('click', count_up);
+      document.getElementById("plus").addEventListener('touchstart', count_up);
+      document.getElementById("minus").addEventListener('touchstart', count_down);
+      document.getElementById("plus").addEventListener('click', count_up);
+      document.getElementById("minus").addEventListener('click', count_down);
       //document.getElementById("number").addEventListener('touchmove', count_up);
     </script>
   </body>
