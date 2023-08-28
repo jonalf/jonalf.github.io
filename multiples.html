@@ -19,8 +19,20 @@
         justify-content: center;
         flex-wrap = wrap;
       }
+      .iface {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
       #tarea {
-        height = 95%;
+        height: 95%;
+      }
+      input {
+        font-size: 3vw;
+        text-align: center;
+      }
+      button {
+        height: 8%;
       }
       div {
         /*font-size: 5vw*/;
@@ -46,14 +58,18 @@
   </head>
 
   <body>
-    <div id="number" class="container">
-      <button id="primes">Primes!</button>
-      <input type="number" id="base" value="0" width="5"></input>
-      <button id="go">Go!</button>
+    <div class="container">
+      <div id="tarea">
+      </div>
+
+      <div class="iface">
+        <input type="number" id="base" value="0" size="5" onfocus="this.value=''"></input>
+        <button id="go">Go!</button>
+        <button id="primes">Primes!</button>
+      </div>
     </div>
 
-    <div id="tarea">
-    </div>
+
 
     <script src="multiples.js"></script>
     <script>document.load = setup()</script>
