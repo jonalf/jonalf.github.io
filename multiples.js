@@ -40,7 +40,7 @@ var newTable = function(p) {
   if (t) {
     t.remove();
   }//get rid of old table
-  console.log(p);
+  //console.log(p);
   var base = -1;
   if (p != -1) {
     base = parseInt(document.getElementById("base").value);
