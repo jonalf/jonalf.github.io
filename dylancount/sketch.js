@@ -43,6 +43,10 @@ function mousePressed() {
   number = number + 1;
 }
 
+function mouseClicked() {
+  number = number + 1;
+}
+
 function breakUpNumber(n) {
   let digits = [];
   if (n < 0) { n *= -1; }
