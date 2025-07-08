@@ -9,7 +9,7 @@ let BLUE = 'rgb(3, 227, 252)';
 let PURPLE = 'rgb(107, 3, 252)';
 let RAINBOW = 'rgb(0)';
 let PINK = 'rgb(209, 79, 194)';
-let GRAY9 = 'rgb(150)';
+let GRAY9 = 'rgb(150, 150, 150)';
 let WHITE = 'rgb(255)';
 
 let COLORS = [WHITE, RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, RAINBOW, PINK, GRAY9, WHITE ];
