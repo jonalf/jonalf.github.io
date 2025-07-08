@@ -39,12 +39,15 @@ function keyPressed() {
   }
 }
 
-function mousePressed() {
-  number = number + 1;
-}
 
 function touchStarted() {
-  number = number + 1;
+  console.log(touches);
+  if (touches.length > 1) {
+    number = number - 1;
+  }
+  else {
+    number = number + 1;
+  }
 }
 
 function breakUpNumber(n) {
