@@ -43,7 +43,7 @@ function mousePressed() {
   number = number + 1;
 }
 
-function mouseClicked() {
+function touchStarted() {
   number = number + 1;
 }
 
