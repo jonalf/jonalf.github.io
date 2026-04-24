@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Landsat Name</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="name_maker.js"></script>
+  </head>
+
+  <body>
+    <div id="canvas_containter">
+      <label for="word">Word:</label>
+      <input type="text" id="word" size="20" placeholder="clyde" />
+      <button type="button" onclick="get_letters()">Get Letters</button>
+      <button type="button" onclick="save_image()">Save Image</button>
+    </div>
+    <div class="container">
+      <div id="letters"></div>
+    </div>
+  </body>
+</html>
