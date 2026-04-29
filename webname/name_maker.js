@@ -66,6 +66,7 @@ const make_all_letter_div = function(word) {
 
 const get_letters = function() {
   word = document.getElementById("word").value;
+  word = word.toLowerCase();
   //console.log(word);
   // let letter_list = make_letter_list(word[0]);
   // let letter_div = make_letter_image_div(letter_list);
