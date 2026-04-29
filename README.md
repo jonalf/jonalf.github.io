@@ -4,3 +4,4 @@
 - [multiples (with primes)](multiples.html)
 - [pattern paint](patternpaint/)
 - [wordle](wordledylan/)
+- [landsat name](webname/)
