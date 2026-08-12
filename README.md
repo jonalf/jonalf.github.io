@@ -5,3 +5,4 @@
 - [pattern paint](patternpaint/)
 - [wordle](wordledylan/)
 - [landsat name](webname/)
+- [periodic table](elementary/)
